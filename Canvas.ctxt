@@ -1,0 +1,16 @@
+#BlueJ class context
+#Mon Sep 14 22:52:57 KST 2026
+comment0.target=Canvas
+comment0.text=\r\n Write a description of class Test here.\r\n\r\n @author (your name)\r\n @version (a version number or a date)\r\n
+comment1.params=args
+comment1.target=void main(java.lang.String[])
+comment2.target=Canvas getCanvas()
+comment3.target=Canvas()
+comment4.target=void settings()
+comment5.target=void setup()
+comment6.params=newShape
+comment6.target=void addShape(Canvas.Shape)
+comment7.params=shapeToDelete
+comment7.target=void erase(Canvas.Shape)
+comment8.target=void draw()
+numComments=9

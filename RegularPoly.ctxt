@@ -1,0 +1,33 @@
+#BlueJ class context
+#Fri Sep 18 00:31:20 KST 2026
+comment0.target=RegularPoly
+comment0.text=\r\n A circle that can be manipulated and that draws itself on a canvas.\r\n \r\n @author  Michael K\u00F6lling and David J. Barnes (original)\r\n @author  Jason Oswald (adapted to PApplet)\r\n @version 7.P.0\r\n
+comment1.target=RegularPoly()
+comment1.text=\r\n Create a new circle at default position with default color.\r\n
+comment10.params=x y size sides
+comment10.target=void Polygon(int, int, int, int)
+comment11.target=void move()
+comment12.target=void erase()
+comment12.text=\r\n Erase the circle on screen.\r\n
+comment13.target=void bounce()
+comment2.target=void makeVisible()
+comment2.text=\r\n Make this circle visible. If it was already visible, do nothing.\r\n
+comment3.params=distance
+comment3.target=void slowMoveHorizontal(int)
+comment3.text=Slowly move the circle horizontally by 'distance' pixels.\r\n
+comment4.params=distance
+comment4.target=void slowMoveVertical(int)
+comment4.text=\r\n Slowly move the circle vertically by 'distance' pixels.\r\n
+comment5.params=newSize
+comment5.target=void changeSize(int)
+comment5.text=\r\n Change the size to the new size (in pixels). Size must be >\= 0.\r\n
+comment6.params=newSides
+comment6.target=void changeSides(int)
+comment7.params=newOffset
+comment7.target=void changeRotate(int)
+comment8.params=newColor
+comment8.target=void changeColor(java.lang.String)
+comment8.text=\r\n Change the color. Valid colors are "red", "yellow", "blue", "green",\r\n "magenta" and "black".\r\n
+comment9.target=void draw()
+comment9.text=\r\n Draw the circle with current specifications on screen.\r\n
+numComments=14

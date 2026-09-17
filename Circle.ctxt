@@ -1,0 +1,17 @@
+#BlueJ class context
+#Mon Sep 14 22:52:57 KST 2026
+comment0.target=Circle
+comment1.target=Circle()
+comment2.target=void makeVisible()
+comment3.target=void makeInvisible()
+comment4.params=distance
+comment4.target=void slowMoveHorizontal(int)
+comment5.params=distance
+comment5.target=void slowMoveVertical(int)
+comment6.params=newDiameter
+comment6.target=void changeSize(int)
+comment7.params=newColor
+comment7.target=void changeColor(java.lang.String)
+comment8.target=void draw()
+comment9.target=void move()
+numComments=10
