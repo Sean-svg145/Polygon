@@ -1,1 +1,330 @@
+Circle Bouncing
+import processing.core.*;
 
+public class Circle extends Canvas.Shape
+{
+    private int diameter;
+    private int xPosition;
+    private int yPosition;
+    private int fillColor;
+    private boolean isVisible;
+
+    private int xMovement = 3;
+    private int yMovement = 2;
+
+    public Circle()
+    {
+        super();
+        diameter = 68;
+        xPosition = 230;
+        yPosition = 90;
+        fillColor = sketch.color(0, 0, 255);
+    }
+
+    public void makeVisible()
+    {
+        isVisible = true;
+    }
+
+    public void makeInvisible()
+    {
+        isVisible = false;
+    }
+
+    public void slowMoveHorizontal(int distance)
+    {
+        xMovement = distance;
+    }
+
+    public void slowMoveVertical(int distance)
+    {
+        yMovement = distance;
+    }
+
+    public void changeSize(int newDiameter)
+    {
+        diameter = newDiameter;
+    }
+
+    public void changeColor(String newColor)
+    {
+        fillColor = getColor(newColor);
+    }
+
+    public void draw()
+    {
+        move();
+
+        if(isVisible)
+        {
+            sketch.fill(fillColor);
+            sketch.ellipse(
+                xPosition,
+                yPosition,
+                diameter,
+                diameter
+            );
+        }
+    }
+
+    private void move()
+    {
+        xPosition += xMovement;
+        yPosition += yMovement;
+
+        if(xPosition + diameter / 2 >= sketch.width ||
+           xPosition - diameter / 2 <= 0)
+        {
+            xMovement = -xMovement;
+        }
+
+        if(yPosition + diameter / 2 >= sketch.height ||
+           yPosition - diameter / 2 <= 0)
+        {
+            yMovement = -yMovement;
+        }
+    }
+}
+Triangle bouncing
+import processing.core.*;
+
+public class Triangle extends Canvas.Shape
+{
+    private int height;
+    private int width;
+    private int xPosition;
+    private int yPosition;
+    private int fillColor;
+    private boolean isVisible;
+
+    private int xMovement = 3;
+    private int yMovement = 2;
+
+    public Triangle()
+    {
+        super();
+        height = 60;
+        width = 70;
+        xPosition = 310;
+        yPosition = 120;
+        fillColor = sketch.color(0,255,0);
+    }
+
+    public void makeVisible()
+    {
+        isVisible = true;
+    }
+
+    public void makeInvisible()
+    {
+        isVisible = false;
+    }
+
+    public void moveRight()
+    {
+        moveHorizontal(20);
+    }
+
+    public void moveLeft()
+    {
+        moveHorizontal(-20);
+    }
+
+    public void moveUp()
+    {
+        moveVertical(-20);
+    }
+
+    public void moveDown()
+    {
+        moveVertical(20);
+    }
+
+    public void moveHorizontal(int distance)
+    {
+        xPosition += distance;
+    }
+
+    public void moveVertical(int distance)
+    {
+        yPosition += distance;
+    }
+
+    public void slowMoveHorizontal(int distance)
+    {
+        xMovement = distance;
+    }
+
+    public void slowMoveVertical(int distance)
+    {
+        yMovement = distance;
+    }
+
+    public void changeSize(int newHeight, int newWidth)
+    {
+        height = newHeight;
+        width = newWidth;
+    }
+
+    public void changeColor(String newColor)
+    {
+        fillColor = getColor(newColor);
+    }
+
+    public void draw()
+    {
+        move();
+
+        if(isVisible)
+        {
+            sketch.fill(fillColor);
+
+            sketch.triangle(
+                xPosition, yPosition,
+                xPosition + (width / 2), yPosition + height,
+                xPosition - (width / 2), yPosition + height
+            );
+        }
+    }
+
+    private void move()
+    {
+        xPosition += xMovement;
+        yPosition += yMovement;
+
+        if(xPosition + width / 2 >= sketch.width ||
+           xPosition - width / 2 <= 0)
+        {
+            xMovement = -xMovement;
+        }
+
+        if(yPosition <= 0 ||
+           yPosition + height >= sketch.height)
+        {
+            yMovement = -yMovement;
+        }
+    }
+
+    private void erase()
+    {
+        sketch.erase(this);
+    }
+}
+Square Bouncing
+import processing.core.*;
+
+public class Square extends Canvas.Shape
+{
+    private int size;
+    private int xPosition;
+    private int yPosition;
+    private int fillColor;
+    private boolean isVisible;
+
+    private int xMovement = 3;
+    private int yMovement = 2;
+
+    public Square()
+    {
+        super();
+        size = 60;
+        xPosition = 310;
+        yPosition = 120;
+        fillColor = sketch.color(255,0,0);
+    }
+
+    public void makeVisible()
+    {
+        isVisible = true;
+    }
+
+    public void makeInvisible()
+    {
+        isVisible = false;
+    }
+
+    public void moveRight()
+    {
+        moveHorizontal(100);
+    }
+
+    public void moveLeft()
+    {
+        moveHorizontal(-60);
+    }
+
+    public void moveUp()
+    {
+        moveVertical(-20);
+    }
+
+    public void moveDown()
+    {
+        moveVertical(20);
+    }
+
+    public void moveHorizontal(int distance)
+    {
+        xPosition += distance;
+    }
+
+    public void moveVertical(int distance)
+    {
+        yPosition += distance;
+    }
+
+    public void slowMoveHorizontal(int distance)
+    {
+        xMovement = distance;
+    }
+
+    public void slowMoveVertical(int distance)
+    {
+        yMovement = distance;
+    }
+
+    public void changeSize(int newSize)
+    {
+        size = newSize;
+    }
+
+    public void changeColor(String newColor)
+    {
+        fillColor = getColor(newColor);
+    }
+
+    public void draw()
+    {
+        move();
+
+        if(isVisible)
+        {
+            sketch.fill(fillColor);
+            sketch.square(xPosition, yPosition, size);
+        }
+    }
+
+    private void move()
+    {
+        xPosition += xMovement;
+        yPosition += yMovement;
+
+        if(xPosition + size >= sketch.width ||
+           xPosition <= 0)
+        {
+            xMovement = -xMovement;
+        }
+
+    
+        if(yPosition + size >= sketch.height ||
+           yPosition <= 0)
+        {
+            yMovement = -yMovement;
+        }
+    }
+
+    private void erase()
+    {
+        sketch.erase(this);
+    }
+}
